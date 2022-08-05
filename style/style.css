@@ -1,0 +1,421 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bankomat_div{
+    box-sizing: border-box;
+    margin-top: 11%;
+    margin-left: 20%;
+    width: 763px;
+    height: 422px;
+    left: 242px;
+    top: 345px;
+    padding: 40px;
+    background: #D0FFF0;
+    border: 7px solid #1D7156;
+
+    border-radius: 54px;
+}
+
+
+
+.name_logo{
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 58px;
+    float: right;
+    color: #000000;
+}
+
+
+.name_card_option{
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 70px;
+    float: none;
+    font-size: 40px;
+}
+
+
+.card_input{
+    width: 60%;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    background: white;
+    border: 5px solid #1D7156;
+    border-radius: 123px;
+    padding: 20px;
+    margin-top: 20%;
+    float: none;
+}   
+
+.card_input:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+
+/*Client----------
+---------*/
+#header_info{
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 10%;
+  background-color: #D0FFF0;
+  text-align: center;
+  font-size: 23px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.nav_menu{
+  position: fixed;
+  width: 46%;
+  background-color: #D0FFF0;  
+  height: 100%;
+  top: 10%;
+  right: 0;
+  border: 5px solid #1D7156;
+  padding: 20px;
+  border-top-left-radius: 2%;
+}
+
+.info_profile{
+  text-align: center;
+  width: 50%;
+  right: 0px;
+}
+
+.menu_info_block{
+  text-align: center;
+  width: 50%;
+  left: 0px;
+}
+
+.name_client{
+  display: inline-block;
+  position: fixed;
+  top:10%;
+  text-align: center;
+  width: 50%;
+  color: #1D7156;
+}
+
+.nav_menu h3{
+  font-size: 25px;
+  font-weight:600;  
+  display: inline;
+}
+
+
+.arrow_info {
+  margin-left: 8px;
+  border: solid #1D7156;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 7px;
+  margin-bottom: 3px;
+  transition: .2s;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.arrow_info:hover{
+  border-color: #1fc892;
+
+}
+.arrow_info:active{
+  transform: rotate(220deg);
+  -webkit-transform: rotate(220deg);
+}
+
+.selected_arrow{
+  transform: rotate(220deg);
+  -webkit-transform: rotate(220deg);
+}
+
+.info_in_block{
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background-color: transparent;
+}
+
+#add_transaction{
+  position: fixed;
+  bottom: 10px;
+  width: 15%;
+  height: 10%;
+  right: 5%;
+  font-size: 25px;
+  color: #D0FFF0;
+  border-radius: 8%;
+  background-color: #1D7156;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* The hingher css code does not using
+NOT USING CODE HIGHER---------
+-----------------------------------*/
+
+
+/*----Card Form on pages: reklama.html; pin.html-----
+-----------------------*/
+
+#card_container{
+  width: 50%;
+  left: 0;
+  height: 100%;
+  padding: 10px;
+}
+
+.credit_card{
+  width: 551px;
+  height: 338px;
+  margin-left: 79px;
+  margin-top: 194px;
+
+  background: #1D7156;
+  border-radius: 74px;
+}
+
+.border_card{
+  box-sizing: border-box;
+  width: 534px;
+  height: 322px;
+  left: 87px;
+  top: 202px;
+  border: 14px solid #D0FFF0;
+  border-radius: 74px;
+}
+
+
+/*-- h3 - Name of bank displayed on card------
+------------------------------*/
+.border_card #name_corp{
+  font-size: 25px;
+  font-weight:600;  
+  color:#D0FFF0;
+  display: inline;
+  margin-left: 40px;
+  
+  
+ 
+}
+
+.border_card h3{
+  font-size: 25px;
+  font-weight:600;  
+
+}
+
+#num_card{
+  
+  width: 374px;
+  height: 33px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 41px;
+  
+  color: #D0FFF0;
+}
+
+
+.card_elem{
+  display: flex;
+}
+
+.card_elem img{
+  display: block;
+}
+
+
+.bottom_info_card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+  color: #D0FFF0;
+  
+}
+
+
+.blocks_card{
+  display: block;
+}
+
+#sum_card{
+  right: 0;
+  color: #FFF500;
+  margin-left: 430px;
+}
+
+#num_card{
+  display: inline-block;
+  text-align: center;
+}
+
+.submin_num_card{
+  padding: 20px;
+  background-color: #1D7156;
+  color: #fff;
+  border-radius: 40%;
+  border: none;
+}
+
+#btn_pin{
+  padding: 30px;
+  background-color: #1D7156;
+  color: #fff;
+  border: none;
+  border-radius:40%;
+}
+
+
+/*Page Balance---------------------------------------
+----------------Page Balance----------------------*/
+
+#body_balance{
+  background-color: #D0FFF0;
+  overflow: hidden;
+}
+
+
+
+.name_h2_div{
+  width: 450px;
+  height: 90px;
+  position: absolute;
+  top: -20px;
+  background-color: #1D7156;
+  color: #fff;
+  border-radius: 20px;
+  left: 40%;
+  text-align: center;
+}
+.name_h2_div h2{
+  margin-top: 40px;
+}
+
+.card_status_div{
+  width:250px; 
+  height: 50px;
+  margin-left: -20px;
+  
+  margin-top: 80px;
+  border-radius: 20px;
+  background-color: #1D7156;
+  color: #fff;
+}
+
+.card_status_div h3{
+  margin-left: 25px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.client_balance{
+  color: #FFF500;
+  top: 80px;
+  
+}
+
+#sum{
+  width: 90%;
+  height: 20px;
+  margin-top: 80px;
+  outline: none;
+  border: none;
+  margin-left: 3%;
+  border: 8px solid #1D7156;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 10px;
+}
+
+#sum::-webkit-outer-spin-button,
+#sum::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#buttons{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 60px;
+  padding: 20px;
+}
+
+#buttons button{
+  width: 300px;
+  height: 70px;
+  background-color: #1D7156;
+  border: none;
+  padding: 20px;
+  margin-bottom: 90px;
+  border-radius: 19px;
+  color: #fff;
+  margin-right: 90px;
+  
+}
+
+.div_exit{
+  width: 200px;
+  height: 60px; 
+  bottom: 25px;
+  color: #fff;
+  background-color: #1D7156;
+  position: fixed;
+  text-align: center;
+  border-radius: 19px;
+  margin-left: -20px;
+}
+
+.buttons_group2, .buttons_group1{
+  display: flex;
+  flex-direction: column;
+}
+
+.get_cash{
+  width: 25%;
+  margin-left: 0;
+  margin-right: 30px;
+  height: 200px;
+  background-color: #1D7156;
+  
+
+
+}
+
+.div_exit img{
+  margin-top: 10px;
+}
+.div_exit a, img{
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  
+}
+

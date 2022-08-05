@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/clients.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"  rel="stylesheet"/>  
+
+    <!-- Google Fonts -->  
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"  rel="stylesheet"  />  
+    
+    MDB -->  
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"  rel="stylesheet"/>  
+
+</head>
+<body>
+    <header>  
+        <nav>  
+            <div class="menu">  
+                <div class="menu_item selected" tab="0" ><a href="">Клієнти</a></div>  
+                <div class="menu_item" tab="1"><a href="#">Користувачі</a></div>  
+                <div class="menu_item" tab="2"><a href="#">Банкомати</a></div>
+
+                
+            </div>  
+        </nav>  
+    </header>  
+    <main>
+       
+        <div id="clients" class="tab active" >
+            <h2>Додати Клієнта</h2>
+            <div id="add_client">
+            
+            </div>
+            <h2>Клієнти</h2>
+            <div class="input-group">  
+                <input id="client_surname" type=" search" class="form-control rounded" placeholder="Search" aria-label="Search"  aria-describedby="search-addon" />  
+                <button type="button" class="btn btn-outline-primary" id="b_find_clients">search</button>  
+            </div> 
+            <div id="list_clients">
+                
+            </div>
+            <div id="info_div">
+                <div id="list_bills">
+
+                </div>
+                <div id="list_cards">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="users" class="tab">
+            <h2>Користувачі</h2>
+            <div class="input-group">  
+                
+                <input type=" search" class="form-control rounded" placeholder="Search" aria-label="Search"  aria-describedby="search-addon" />  
+        
+                <button type="button" class="btn btn-outline-primary">search</button>  
+        
+            </div> 
+        </div>
+
+        <div id="bankomats" class="tab">
+            <h2>Банкомати</h2>
+            <div class="input-group">  
+
+                <input type=" search" class="form-control rounded" placeholder="Search" aria-label="Search"  aria-describedby="search-addon" />  
+        
+                <button type="button" class="btn btn-outline-primary">search</button>  
+        
+            </div> 
+        </div>
+    </main>
+    <script src="js/index.js"></script>
+
+  
+     
+  
+</body>
+</html>

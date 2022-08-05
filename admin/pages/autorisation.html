@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reg_admin.css">
+    <link rel="stylesheet" href="../css/clients.css">
+</head>
+<body>
+<div class="wrapper login">
+        <div class="container">
+            <div class="col-left">
+                <div class="login-text">
+                    <h2>Авторизація</h2>
+                    <p>Кабінет адміністрації системи<br>"Bankomat"</p>
+                    
+                </div>
+            </div>
+            <script src="js/index.js"></script>
+            <div class="col-right">
+                <div class="login-form">
+                    <h2>Адмін</h2>
+                    <form name="enter_admin" method="post" id="form_registration">
+                        
+                        <p>
+                            <label>Введіть login<span>*</span></label>
+                            <input type="text" name="login" id="login_input" placeholder="Login" required>
+                        </p>
+                        <p>
+                            <label>Введіть password<span>*</span></label>
+                            <input type="password" pattern="{4,4}" placeholder="Password"  name="password" id="password_input" required >
+
+                        </p>
+                        <p>
+                            <input type="submit" value="Sign In" id="autorication_btn">
+                        </p>
+                       
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
+</body>
+</html>

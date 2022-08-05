@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">  
+</head>
+<body id="body_balance">
+    <div class="name_h2_div">
+        <h2>Вітаю, {hello}</h2>
+    </div>
+    <div class="card_status_div">
+        <h3>Статус карти: {status}</h3>
+    </div>
+    <div class="client_balance card_status_div">
+        <h3>Баланс:<span id='balance' >{balance}</span>  {valute}</h3>
+    </div>
+    
+
+
+    <form  onsubmit="return false"> 
+        <input type="number" id="sum" name="sum" min="0" >
+        <input type="hidden" value="{id_client}" name="id_client">
+        <input type="hidden" value="{id_card}" name="id_card">
+        <input type="hidden" name="id_bankomat" value="1">
+        <input type="submit" value="Зняти" {state} id="take_cash">
+    </form>
+    <div id="buttons">
+        <div class="buttons_group1">
+            <button class="cash_option_first">100</button>
+            <button>200</button>
+        </div>
+        <div class="buttons_group2">
+            <button>500</button>
+            <button class="cash_option_last">1000</button>
+        </div>
+        <div class="get_cash">
+            
+        </div>
+    </div>
+   
+    <div class="div_exit"> 
+        <a href="index.php">
+            <img src="img/exit.svg" alt="" srcset="">
+            <a href="">Вихід</a>
+        </a>
+        
+        
+    </div>
+    
+    <script>
+        var $=function (id) { 
+           return document.getElementById(id);
+        }
+        var Out_cash={
+            "1000":0,
+            "500":0,
+            "200":0, 
+            "100":0,
+            "50": 0, 
+            "20":0,
+            "state":false
+        }
+       
+
+        console.dir(Out_cash);
+        var banknots=[1000,500,200,100,50,20];
+        var buttons= document.getElementById("buttons").getElementsByTagName("button");
+        for (var i=0; i<buttons.length;i++){
+            buttons[i].onclick=function(){
+                document.getElementById("sum").value=this.innerHTML;
+            }
+        }
+
+        document.getElementById("take_cash").onclick=function(){
+            
+            /*var cash_cart={
+            "1000":1,
+            "500":100, 
+            "200":200, 
+            "100":300,
+            "50": 200,
+            "20":100
+            }
+            /*"1000":0,
+            "500":0,
+            "200":0, 
+            "100":0,
+            "50": 0, 
+            "20":0,
+            "state":false
+            }*/
+            var out_cash= Out_cash;
+            out_cash["500"]=0;
+            out_cash["1000"]=0;
+            console.dir(out_cash);
+            //localStorage.setItem("cash_cart", JSON.stringify(cash_cart));
+            var cash_cart=JSON.parse(localStorage.getItem("cash_cart"));
+            //console.log(cash_cart);q
+            var sum=1 *document.getElementById("sum").value;
+            var tmp=sum;
+            console.log("tmp "+tmp);
+            
+            for (let i = 0; i < banknots.length && tmp>0;  i++) {
+                var count_amount= Math.floor(tmp/banknots[i]);
+                var banknots_str=String(banknots[i]);
+                
+                if(count_amount> cash_cart[banknots_str] && cash_cart[banknots_str]>=0){
+                    count_amount=1*cash_cart[banknots_str];
+                }
+                
+                out_cash[banknots_str]=count_amount;
+                //console.log(banknots[i]+"="+count_amount);
+                tmp-= count_amount*banknots[i];
+            }
+            if (tmp==0){
+                out_cash["state"]="true";
+                var Form_cl=this.parentElement;
+                var data_transaction= new FormData(Form_cl);
+                var xhttp = new XMLHttpRequest();
+                
+                xhttp.onreadystatechange = function() {
+                    //alert("this.status="+this.status);
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText);
+                        if (this.responseText=="0"){
+                            /*var client=this.responseText;
+                            console.log(client);*/
+                            for(var i=0; i<banknots.length; i++){
+                                var banknots_str=String(banknots[i]);
+                                cash_cart[banknots_str]-=out_cash[banknots_str];
+                            }
+                            //alert(sum);
+                            $("balance").innerHTML=1*$("balance").innerHTML-sum;
+                        }
+                        else{
+                            if(this.responseText=="1"){
+                                alert("Card blocked");
+                            }
+                            else if(this.responseText=="2"){
+                                alert("Not enough money");
+                            }
+                        }
+                    }
+                }
+                xhttp.open("POST", "php/transaction.php");
+                xhttp.send(data_transaction);
+                            
+            }
+            else{
+                alert("There aren't cash for this sum")
+            }
+            
+
+        }
+            
+        
+        
+        function request_trans(data_transaction){
+            var xhttp = new XMLHttpRequest();
+       
+            xhttp.onreadystatechange = function() {
+
+                //alert("this.status="+this.status);
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    /*if (this.responseText!="0 result"){
+                        var client=this.responseText;
+                        console.log(client);
+                    } */
+                }
+            }
+            xhttp.open("POST", "php/transaction.php");
+            xhttp.send(data_transaction);
+        }
+        
+
+    </script>
+    
+</body>
+</html>
