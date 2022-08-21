@@ -9,7 +9,7 @@
         $pin_card=$_POST["card_pin"];
         $num_card=$_POST["num_card"];
         $pin_card=htmlspecialchars($pin_card);
-        $link = mysqli_connect($host, $user, '', $db);
+        $link = mysqli_connect($host, $user, $password, $db);
 
         // Check connection
         if (!$link) {   
