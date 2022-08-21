@@ -18,7 +18,7 @@
             $num_card=$_POST["num_card"];
             $num_card=htmlspecialchars($num_card);
             
-            $link = mysqli_connect($host, $user, '', $db);
+            $link = mysqli_connect($host, $user, $password, $db);
             if ($link){
                 $query="SELECT id FROM cards WHERE card_code='".mysqli_real_escape_string($link,$num_card)."'";
                 $result = mysqli_query($link, $query);
