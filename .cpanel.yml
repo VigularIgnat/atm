@@ -1,5 +1,4 @@
 ---
 deployment:
-  tasks:
-    - export DEPLOYPATH=/home/example/public_html/
-    - /bin/cp -R ATM $DEPLOYPATH
+tasks:
+- export DEPLOYPATH=/home/atmihnat/https://github.com/VigularIgnat/ATM
